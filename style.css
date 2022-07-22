@@ -1,0 +1,257 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #eee6c8;
+  font-size: 1.2em;
+  color: #fafafa;
+  min-height: 100vh;
+  /*overflow: hidden;*/
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+#container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+
+#tools-container img{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+/*tool tip */
+.tool-tip {
+    position: relative;
+}
+
+.tool-tip .tool-text {
+    position: absolute;
+    visibility: hidden;
+    width: 250px;
+    color: white;
+    background-color: #B6AF92;
+    border-radius: 25px;
+    opacity: 0;
+    text-align: center;
+    padding: 8px;
+    z-index: 1;
+    transition: opacity 1s;
+    font-size: 0.7em;
+    white-space: nowrap;
+    bottom: 1.5em;
+}
+
+.tool-tip:hover .tool-text{
+    visibility: visible;
+    opacity: 1;
+}
+
+.switch-grid, .tool-tip .tool-text {
+    left: 4em;
+}
+
+#tools-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+button {
+    font-size: 1.5em;
+    color: #1d1d1d;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #fafafa;
+    box-shadow: -10px 10px 10px rgba(78, 78, 78, 0.3);
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+.switch-grid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+}
+
+/*grid container div*/
+#grid-container {
+    display: grid;
+    background-color: #fafafa;
+    height: 400px;
+    width: 400px;
+    box-shadow: -10px 10px 10px rgba(78, 78, 78, 0.3);
+}
+
+.gridOn{
+    border: 1px solid #d0d3c8;
+}
+
+#grid-recommended-sizes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: rgba(78, 78, 78, .6);
+    padding: 15px 10px;
+    border-radius: 20px;
+    box-shadow: -10px 10px 10px rgba(78, 78, 78, 0.3);
+    background-color: #F18805;
+
+}
+
+#grid-recommended-sizes img{
+    height: 120px;
+    width: 120px;
+    /*box-shadow: -10px 10px 10px rgba(78, 78, 78, 0.1);*/
+}
+
+#grid-recommended-sizes img:hover{
+    transform: scale(1.2);
+}
+
+#grid-recommended-sizes input{
+    width: 70px;
+}
+
+/*choose color button*/
+.pen-box{
+    background-color: #fafafa;
+    border-radius: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: -10px 10px 10px rgba(78, 78, 78, 0.3);
+}
+
+.pen-box:hover {
+    transform: scale(1.2);
+}
+
+#color-picker{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    background-color: #fafafa;
+    padding: 0 5px 0 0;
+}
+
+#choose-color-mode{
+    border-right: 3px solid #b4b6ad;
+    border-radius: 0px;
+    padding: 5px 15%;
+    margin: 5px 0;
+    box-shadow: none;
+    transform: none;
+}
+
+.custom-size{
+    display: flex;
+    gap: 8px;
+}
+
+svg{
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.color-cursor{
+    cursor: url('images/color-cursor.png'), auto;
+}
+
+.rainbow-cursor{
+    cursor: url('images/rainbow-cursor.png'), auto;
+}
+
+.eraser-cursor{
+    cursor: url('images/eraser-cursor.png'), auto;
+}
+
+/*grid switch*/
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 34px;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 34px;
+    background-color: #dad3bc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before{
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 34px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+input:checked + .slider:before{
+    -webkit-transform: translatex(56px);
+    transform: translatex(56px);
+}
+
+footer{
+    position: absolute;
+    font-size: 15px;
+    color: #1d1d1d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0; 
+    width: 100%;
+    gap: 10px;
+}
+
+
+#github{
+    float: left;
+    margin-top: -46%; 
+}
