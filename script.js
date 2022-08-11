@@ -88,7 +88,8 @@ function makeGrid(size){
     }
   }
 
- 
+let disableSelect= (e) => {return false};
+document.onselectstart= disableSelect;
 
 let mouseDown = false;
 document.body.onmousedown = () => (mouseDown = true);
